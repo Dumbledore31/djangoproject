@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+    <table>
+        <tr>
+            <th>Photo</th>
+            <th>id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Place</th>
+            <th>Email</th>
+        </tr>
+    {% for d in data %}
+    <tr>
+        <td><img src="{{d.Photo.url}}" alt="" height="50%" width="50%"></td>
+        <td>{{d.id}}</td>
+        <td>{{d.Name}}</td>
+        <td>{{d.Age}}</td>
+        <td>{{d.Place}}</td>
+        <td>{{d.Email}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
